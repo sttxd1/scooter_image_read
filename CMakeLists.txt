@@ -7,6 +7,10 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 find_package(ament_cmake_auto REQUIRED)
 ament_auto_find_build_dependencies()
+# Find and include PCL
+find_package(PCL REQUIRED COMPONENTS common io)
+include_directories(${PCL_INCLUDE_DIRS})
+add_definitions(${PCL_DEFINITIONS})
 
 find_package (OpenCV REQUIRED)
 find_package (Boost REQUIRED)

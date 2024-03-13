@@ -79,9 +79,9 @@ void TopicToImage::ImageCallback(const sensor_msgs::msg::Image::ConstSharedPtr &
     RCLCPP_ERROR(this->get_logger(), "cv_bridge exception: %s", e.what());
     return;
   }
-  cv::imwrite(fname, in_image_ptr->image);
+  // cv::imwrite(fname, in_image_ptr->image);
 
-  RCLCPP_INFO_STREAM(get_logger(), "Image saved to: " << fname);
+  RCLCPP_INFO_STREAM(get_logger(), "Image read: " << fname);
 }
 
 #include <rclcpp_components/register_node_macro.hpp>
